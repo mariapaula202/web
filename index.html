@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Knight - Combate</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/74/05/f7/7405f728fcfee92d0b8a4e19b56f66a4.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="screen-home">
+        <div class="title">
+            <h1>Hollow Knight</h1>
+        </div>
+        <img class="credits-img" src="https://i.pinimg.com/originals/6a/5e/e2/6a5ee2d2f2889ffa82576c7cd00e4f51.gif">
+        <br>
+        <button class="start">Iniciar Juego</button>
+        <div class="credits"> 
+            <p><strong>Créditos a Maria Paula Gonzalez Zapata</strong></p>
+            <p><strong>Programa: Programación de Computadores</strong></p>
+            <p><strong>Grupo: 2</strong></p>
+        </div>
+    </div>
+
+    <div class="battle" style="display: none;">
+        <h2>¡Combate!</h2>
+        <div class="battlefield">
+            <div class="player">
+                <h2 id="player-name">Knight</h2>
+                <img id="player-img" src="images/knight_idle.png" alt="jugador" width="120">
+
+                <!-- Contenedor de barra de vida -->
+                <div class="health-bar-container">
+                    <div id="player-health-bar" class="health-bar"></div>
+                </div>
+                </div>
+
+            <div class="enemy">
+                <h2 id="enemy-name"></h2>
+                <img id="enemy-img" src="images/enemy1.png" alt="enemigo" width="120">
+
+                <!-- Contenedor de barra de vida -->
+                <div class="health-bar-container">
+                    <div id="enemy-health-bar" class="health-bar"></div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <p id="status"></p>
+
+        <div id="player-options">
+            <h3>Elige una habilidad:</h3>
+            <button onclick="playerAttack(1)"><img class="skill-icon" src="images/knight-ataque1.png" alt=""></button>
+            <button onclick="playerAttack(2)"><img class="skill-icon" src="images/knight-ataque2.png" alt=""></button>
+            <button onclick="playerAttack(3)"><img class="skill-icon" src="images/knight-ataque3.png" alt=""></button>
+        </div>
+
+        <div id="defense-options" style="display: none;">
+            <h3>El enemigo ataca: elige un escudo</h3>
+            <button onclick="defend(1)"><img class="skill-icon" src="images/knight-defensa1.png" alt=""></button>
+            <button onclick="defend(2)"><img class="skill-icon" src="images/knight-defensa2.png" alt=""></button>
+            <button onclick="defend(3)"><img class="skill-icon" src="images/knight-defensa3.png" alt=""></button>
+        </div>
+    </div>
+    <audio src="audio/background-music.mp3" autoplay loop></audio>
+
+    <div id="pause-menu" class="pause-menu" style="display: none;">
+    <h2>Juego en Pausa</h2>
+    <button onclick="resumeGame()">Continuar</button>
+    <button onclick="goToMainMenu()">Menú Principal</button>
+    <button onclick="restartGame()">Reiniciar</button>
+</div>
+
+
+    <script src="combate.js"></script>
+</body>
+</html>
